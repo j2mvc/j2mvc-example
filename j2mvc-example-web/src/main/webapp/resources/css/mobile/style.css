@@ -1,0 +1,21 @@
+iframe,body,table,a,li,dd {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	color: #3c3c3c;
+	font-size: 12px;
+	font-family: 宋体, 微软雅黑, Arail;
+}
+
+a {
+	text-decoration: none;
+	color: #484848
+}
+
+a:hover {
+	color: #2386e2
+}
+
+body {
+	background: #f5f6f5
+}

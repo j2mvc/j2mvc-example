@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	actions 通过action uri地址获取文件（通常为JSP文件）。
+ 	DispatcherFilter分发执行相应的页面处理类Action 
+ -->
+<works>
+
+	<DataSource 
+		name="jdbc/j2mvc_example" 
+		driverClassName="com.mysql.jdbc.Driver" 
+		username="example"
+		password="exmaplepass" 
+		maxIdle="2"
+		maxWait="100000" 
+		maxActive="100"
+		initialSize="1"
+		url="jdbc:mysql://127.0.0.1:3306/j2mvc_example?autoReconnect=true&amp;failOverReadOnly=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />	
+	 
+	<!-- 拦截器 -->
+	 <interceptors>
+		<interceptor ref="com.j2mvc.example.web.interceptor.UserInterceptor"/>
+	</interceptors> 
+	
+	
+	<!-- actions控制器包名，多个包名用英文逗号分隔，WEB服务器启动时，注入actions -->
+	<actions-packages>
+		com.j2mvc.example.web.action
+	</actions-packages>
+	
+	<i18n-default>zh-CN</i18n-default>
+</works>

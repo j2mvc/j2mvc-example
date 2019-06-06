@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<!-- 标签库的版本号 -->
+	<tlib-version>1.0</tlib-version>
+	<!-- 标签库的默认前缀 -->
+	<short-name>live</short-name>
+	<!-- 标签库的默认URI -->
+	<uri>http://tag.j2mvc.com/taglib/core</uri>
+
+	<tag>
+		<description>生成MD5</description>
+		<name>md5</name>
+		<tag-class>com.j2mvc.example.web.taglib.MD5Tag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description>源</description>
+			<name>source</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<description>格式化日期时间</description>
+		<name>dateFormat</name>
+		<tag-class>com.j2mvc.example.web.taglib.DateFormatTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description>源</description>
+			<name>source</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>格式</description>
+			<name>format</name>
+			<required>false</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>强制格式化</description>
+			<name>force</name>
+			<required>false</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>截取尾字符串</description>
+		<name>subLastIndexOf</name>
+		<tag-class>com.j2mvc.example.web.taglib.SubLastIndexOfTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description>源</description>
+			<name>source</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>正则表达式</description>
+			<name>regex</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<tag>
+		<description>字符串替换</description>
+		<name>replace</name>
+		<tag-class>com.j2mvc.example.web.taglib.StringReplace</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description>源</description>
+			<name>source</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>替换表达式</description>
+			<name>regex</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<description>目标字符</description>
+			<name>replacement</name>
+			<required>true</required>
+			<!-- 可以使用JSP表达式 -->
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+
+</taglib>  

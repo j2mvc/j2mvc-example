@@ -7,16 +7,24 @@
 1:使用Eclipse创建Maven项目
 	File => new => project =>  Maven => Maven Project
 	在Select an Archetype选择maven-archetype-quickstart
+
 2、添加Maven依赖
+
 3、数据库｜表
+
 4、应用配置
+
 5、实体模型
+
 6、应用逻辑
+
 7、应用入口
+
 8、发布
 
 # 创建java web项目
-    请参考示例j2mvc-example-web
+
+   请参考示例j2mvc-example-web
 1、使用Eclipse创建Maven项目
 	File => new => project =>  Maven => Maven Project
 	在Select an Archetype选择maven-archetype-webapp
@@ -119,6 +127,7 @@
 			</resource>
 		</resources>
 	</build>
+
 2、数据库｜表
 create database j2mvc_example;
 
@@ -160,10 +169,6 @@ CREATE TABLE IF NOT EXISTS carts(
 
 3、网站配置
 /WEB-INF/web.xml
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
-  <display-name>minmeng-web</display-name>
-
 	<listener>
 		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
 	</listener>
@@ -206,8 +211,34 @@ CREATE TABLE IF NOT EXISTS carts(
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-		
-</web-app>
+	
+/WEB-INF/works.xml
+<works>
+
+	<DataSource 
+		name="jdbc/j2mvc_example" 
+		driverClassName="com.mysql.jdbc.Driver" 
+		username="example"
+		password="exmaplepass" 
+		maxIdle="2"
+		maxWait="100000" 
+		maxActive="100"
+		initialSize="1"
+		url="jdbc:mysql://127.0.0.1:3306/j2mvc_example?autoReconnect=true&amp;failOverReadOnly=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />	
+	 
+	<!-- 拦截器 -->
+	 <interceptors>
+		<interceptor ref="com.j2mvc.example.web.interceptor.UserInterceptor"/>
+	</interceptors> 
+	
+	
+	<!-- actions控制器包名，多个包名用英文逗号分隔，WEB服务器启动时，注入actions -->
+	<actions-packages>
+		com.j2mvc.example.web.action
+	</actions-packages>
+	
+	<i18n-default>zh-CN</i18n-default>
+</works>
 
 4、实体模型
 import com.j2mvc.util.mapping.DataSourceName;
@@ -257,10 +288,13 @@ public class BaseAction extends Action{
 		return "index.jsp";
 	}
 }
+
 7、jsp
 	在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。
+
 8、运行
 	直接运行到tomcat。
+
 9、发布
 	mvn clean install
 	打包目录/target。将生成war文件或发布目录，上传至服务器。
