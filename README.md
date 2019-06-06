@@ -5,9 +5,12 @@
 # 创建java application项目
     请参考示例j2mvc-example-app
 1、使用Eclipse创建Maven项目
+<pre>
 	File => new => project =>  Maven => Maven Project
 	在Select an Archetype选择maven-archetype-quickstart
+</pre>
 
+<pre>
 2、添加Maven依赖
 
 3、数据库｜表
@@ -21,14 +24,18 @@
 7、应用入口
 
 8、发布
-
+</pre>
 # 创建java web项目
    请参考示例j2mvc-example-web
 1、使用Eclipse创建Maven项目
+
+<pre>
 	File => new => project =>  Maven => Maven Project
 	在Select an Archetype选择maven-archetype-webapp
+</pre>
 	在pom.xml中添加依赖
 	
+<pre>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -126,7 +133,7 @@
 			</resource>
 		</resources>
 	</build>
-
+</pre>
 2、数据库｜表
 <pre>
 create database j2mvc_example;
@@ -168,9 +175,11 @@ CREATE TABLE IF NOT EXISTS carts(
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 	</pre>
+
 3、网站配置
 /WEB-INF/web.xml
 
+<pre>
 	<listener>
 		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
 	</listener>
@@ -213,9 +222,10 @@ CREATE TABLE IF NOT EXISTS carts(
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-
+</pre>
 /WEB-INF/works.xml
 
+<pre>
 <works>
 	<DataSource 
 		name="jdbc/j2mvc_example" 
@@ -241,9 +251,10 @@ CREATE TABLE IF NOT EXISTS carts(
 	
 	<i18n-default>zh-CN</i18n-default>
 </works>
-
+</pre>
 4、实体模型
 
+<pre>
 import com.j2mvc.util.mapping.DataSourceName;
 import com.j2mvc.util.mapping.NotJSONField;
 import com.j2mvc.util.mapping.PrimaryKey;
@@ -263,9 +274,10 @@ public class User {
 	private String id;
 	...
 }
-
+</pre>
 5、服务逻辑
 
+<pre>
 import java.util.List;
 import com.j2mvc.example.web.entity.Cart;
 import com.j2mvc.framework.dao.DaoSupport;
@@ -280,9 +292,10 @@ public class CartService {
 		return (Cart) dao.insert(cart);
 	}
 }
-
+</pre>
 6、访问逻辑
 
+<pre>
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
 @ActionPath(path="/",dir="/WEB-INF/jsp/")
@@ -294,14 +307,20 @@ public class BaseAction extends Action{
 		return "index.jsp";
 	}
 }
-
+</pre>
 7、jsp
-	在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。
 
+<pre>
+	在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。
+</pre>
 8、运行
+
+<pre>
 	直接运行到tomcat。
+</pre>
 
 9、发布
+<pre>
 	mvn clean install
 	打包目录/target。将生成war文件或发布目录，上传至服务器。
 	<font color=red>
@@ -309,6 +328,6 @@ public class BaseAction extends Action{
 	若打包后的action类，无法获取到参数，
 	先clean工程项目，将target下classes目录上传至服务器覆盖原有classes目录
 	</font>
-	
+</pre>
 
 
