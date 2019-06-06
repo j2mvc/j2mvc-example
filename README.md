@@ -1,5 +1,5 @@
 # j2mvc-example项目简介
-基于j2mvc开发的示例项目，帮助你快速学会JAVA开发
+基于j2mvc开发的示例项目，帮助你快速学会JAVA开发。
 
 
 # 创建java application项目
@@ -8,8 +8,8 @@
 </pre>
 1、使用Eclipse创建Maven项目
 <pre>
-	File => new => project =>  Maven => Maven Project
-	在Select an Archetype选择maven-archetype-quickstart
+File => new => project =>  Maven => Maven Project
+在Select an Archetype选择maven-archetype-quickstart
 </pre>
 
 <pre>
@@ -34,8 +34,8 @@
 1、使用Eclipse创建Maven项目
 
 <pre>
-	File => new => project =>  Maven => Maven Project
-	在Select an Archetype选择maven-archetype-webapp
+File => new => project =>  Maven => Maven Project
+在Select an Archetype选择maven-archetype-webapp
 </pre>
 	在pom.xml中添加依赖
 	
