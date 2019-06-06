@@ -4,7 +4,7 @@
 
 # 创建java application项目
 <pre>
- 请参考示例j2mvc-example-app
+请参考示例：j2mvc-example-app
 </pre>
 1、使用Eclipse创建Maven项目
 <pre>
@@ -29,7 +29,7 @@ File => new => project =>  Maven => Maven Project
 </pre>
 # 创建java web项目
 <pre>
-   请参考示例j2mvc-example-web
+请参考示例：j2mvc-example-web
 </pre>
 1、使用Eclipse创建Maven项目
 
