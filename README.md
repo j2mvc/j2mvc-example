@@ -4,7 +4,7 @@
 
 # 创建java application项目
     请参考示例j2mvc-example-app
-1:使用Eclipse创建Maven项目
+1、使用Eclipse创建Maven项目
 	File => new => project =>  Maven => Maven Project
 	在Select an Archetype选择maven-archetype-quickstart
 
@@ -23,7 +23,6 @@
 8、发布
 
 # 创建java web项目
-
    请参考示例j2mvc-example-web
 1、使用Eclipse创建Maven项目
 	File => new => project =>  Maven => Maven Project
@@ -129,6 +128,7 @@
 	</build>
 
 2、数据库｜表
+<code>
 create database j2mvc_example;
 
 grant all privileges on j2mvc_example.* to exmaple@127.0.0.1 identified by 'exmaplepassword' WITH GRANT OPTION;
@@ -167,8 +167,10 @@ CREATE TABLE IF NOT EXISTS carts(
   	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+	</code>
 3、网站配置
 /WEB-INF/web.xml
+
 	<listener>
 		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
 	</listener>
@@ -211,10 +213,10 @@ CREATE TABLE IF NOT EXISTS carts(
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-	
-/WEB-INF/works.xml
-<works>
 
+/WEB-INF/works.xml
+
+<works>
 	<DataSource 
 		name="jdbc/j2mvc_example" 
 		driverClassName="com.mysql.jdbc.Driver" 
@@ -241,6 +243,7 @@ CREATE TABLE IF NOT EXISTS carts(
 </works>
 
 4、实体模型
+
 import com.j2mvc.util.mapping.DataSourceName;
 import com.j2mvc.util.mapping.NotJSONField;
 import com.j2mvc.util.mapping.PrimaryKey;
@@ -262,6 +265,7 @@ public class User {
 }
 
 5、服务逻辑
+
 import java.util.List;
 import com.j2mvc.example.web.entity.Cart;
 import com.j2mvc.framework.dao.DaoSupport;
@@ -276,7 +280,9 @@ public class CartService {
 		return (Cart) dao.insert(cart);
 	}
 }
+
 6、访问逻辑
+
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
 @ActionPath(path="/",dir="/WEB-INF/jsp/")
