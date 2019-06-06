@@ -35,7 +35,6 @@
 </pre>
 	在pom.xml中添加依赖
 	
-<pre>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -133,7 +132,7 @@
 			</resource>
 		</resources>
 	</build>
-</pre>
+	
 2、数据库｜表
 <pre>
 create database j2mvc_example;
@@ -179,7 +178,7 @@ CREATE TABLE IF NOT EXISTS carts(
 3、网站配置
 /WEB-INF/web.xml
 
-<pre>
+
 	<listener>
 		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
 	</listener>
@@ -222,10 +221,10 @@ CREATE TABLE IF NOT EXISTS carts(
 		<error-code>500</error-code>
 		<location>/500.jsp</location>
 	</error-page>
-</pre>
+	
 /WEB-INF/works.xml
 
-<pre>
+
 <works>
 	<DataSource 
 		name="jdbc/j2mvc_example" 
@@ -251,7 +250,7 @@ CREATE TABLE IF NOT EXISTS carts(
 	
 	<i18n-default>zh-CN</i18n-default>
 </works>
-</pre>
+
 4、实体模型
 
 <pre>
