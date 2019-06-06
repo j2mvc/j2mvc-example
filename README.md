@@ -323,10 +323,10 @@ public class BaseAction extends Action{
 	mvn clean install
 	打包目录/target。将生成war文件或发布目录，上传至服务器。
 	<font color=red>
-	注意
+</pre>
+
+	#注意
 	若打包后的action类，无法获取到参数，
 	先clean工程项目，将target下classes目录上传至服务器覆盖原有classes目录
-	</font>
-</pre>
 
 
