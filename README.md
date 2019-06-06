@@ -3,7 +3,9 @@
 
 
 # 创建java application项目
-    请参考示例j2mvc-example-app
+<pre>
+ 请参考示例j2mvc-example-app
+</pre>
 1、使用Eclipse创建Maven项目
 <pre>
 	File => new => project =>  Maven => Maven Project
@@ -26,7 +28,9 @@
 8、发布
 </pre>
 # 创建java web项目
+<pre>
    请参考示例j2mvc-example-web
+</pre>
 1、使用Eclipse创建Maven项目
 
 <pre>
@@ -159,7 +163,7 @@ CREATE TABLE IF NOT EXISTS products(
 	detail				varchar(255)	NOT NULL COMMENT '商品详情',				
 	price				double(11,2)	NOT NULL COMMENT '价格',		
 	stock				int(11)			NOT NULL COMMENT '库存',
-  	PRIMARY KEY (id)
+ 	PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 购物车
@@ -169,15 +173,14 @@ CREATE TABLE IF NOT EXISTS carts(
 	user_id				varchar(255)	NOT NULL COMMENT '用户ID',			
 	product_id			varchar(255)	NOT NULL COMMENT '商品ID',				
 	num					int(11)	NOT NULL COMMENT '数量',				
-  	PRIMARY KEY (id),
-  	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-	</pre>
+</pre>
 
 3、网站配置
 /WEB-INF/web.xml
-
 
 	<listener>
 		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
@@ -224,7 +227,6 @@ CREATE TABLE IF NOT EXISTS carts(
 	
 /WEB-INF/works.xml
 
-
 <works>
 	<DataSource 
 		name="jdbc/j2mvc_example" 
@@ -252,7 +254,6 @@ CREATE TABLE IF NOT EXISTS carts(
 </works>
 
 4、实体模型
-
 <pre>
 import com.j2mvc.util.mapping.DataSourceName;
 import com.j2mvc.util.mapping.NotJSONField;
@@ -274,8 +275,8 @@ public class User {
 	...
 }
 </pre>
-5、服务逻辑
 
+5、服务逻辑
 <pre>
 import java.util.List;
 import com.j2mvc.example.web.entity.Cart;
@@ -292,8 +293,8 @@ public class CartService {
 	}
 }
 </pre>
-6、访问逻辑
 
+6、访问逻辑
 <pre>
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
@@ -307,26 +308,24 @@ public class BaseAction extends Action{
 	}
 }
 </pre>
+
 7、jsp
-
 <pre>
-	在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。
+在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。
 </pre>
-8、运行
 
+8、运行
 <pre>
-	直接运行到tomcat。
+直接运行到tomcat。
 </pre>
 
 9、发布
 <pre>
-	mvn clean install
-	打包目录/target。将生成war文件或发布目录，上传至服务器。
-	<font color=red>
+mvn clean install
+打包目录/target。将生成war文件或发布目录，上传至服务器。
 </pre>
 
-	#注意
-	若打包后的action类，无法获取到参数，
-	先clean工程项目，将target下classes目录上传至服务器覆盖原有classes目录
+10、注意
+若打包后的action类，无法获取到参数，
 
 
