@@ -8,9 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>com.j2mvc.example</groupId>
 	<artifactId>j2mvc-example-app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 
 	<name>j2mvc-example-app</name>
 	<!-- FIXME change it to the project's website -->

@@ -5,7 +5,6 @@ import java.util.List;
 import com.j2mvc.example.web.entity.Cart;
 import com.j2mvc.example.web.entity.Product;
 import com.j2mvc.util.Pagination;
-import com.j2mvc.util.Success;
 import com.j2mvc.util.Utils;
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
@@ -57,9 +56,9 @@ public class CartAction extends BaseAction{
 		cart.setProduct(new Product(productId));
 		
 		if(cartService.save(cart)!=null){
-			printJson(new Success("添加购物车成功！"));
+			success("添加购物车成功！",null);
 		}else{
-			printJson(new Error("添加购物车失败！"));
+			error("添加购物车失败！");
 		}
 	}
 
@@ -69,9 +68,9 @@ public class CartAction extends BaseAction{
 	@ActionUri(uri="update([/])?")
 	public void updateCart(Cart cart){
 		if(cartService.save(cart)!=null){
-			printJson(new Success("更改购物车成功！"));
+			success("更改购物车成功！",null);
 		}else{
-			printJson(new Error("更改购物车失败！"));
+			error("更改购物车失败！");
 		}
 	}
 	/**
@@ -80,13 +79,13 @@ public class CartAction extends BaseAction{
 	@ActionUri(uri="del([/])?")
 	public void add(String ids){
 		if(ids == null){
-			printJson(new Error("没有选择条目！"));
+			error("没有选择条目！");
 		}
 		Integer num = cartService.delete(ids.split(","));
 		if(num>0){
-			printJson(new Success("删除购物车成功！"));
+			success("删除购物车成功！",null);
 		}else{
-			printJson(new Error("添加购物车失败！"));
+			error("添加购物车失败！");
 		}
 	}
 }

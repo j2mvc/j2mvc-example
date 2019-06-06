@@ -8,13 +8,13 @@
 	<DataSource 
 		name="jdbc/j2mvc_example" 
 		driverClassName="com.mysql.jdbc.Driver" 
-		username="example"
-		password="exmaplepass" 
+		username="j2mvcuser"
+		password="j2mvcpass" 
 		maxIdle="2"
 		maxWait="100000" 
 		maxActive="100"
 		initialSize="1"
-		url="jdbc:mysql://127.0.0.1:3306/j2mvc_example?autoReconnect=true&amp;failOverReadOnly=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />	
+		url="jdbc:mysql://127.0.0.1/j2mvc_example?autoReconnect=true&amp;failOverReadOnly=false&amp;useUnicode=true&amp;characterEncoding=UTF-8" />	
 	 
 	<!-- 拦截器 -->
 	 <interceptors>

@@ -10,7 +10,7 @@ import com.j2mvc.util.mapping.Table;
  * @author yangshuo
  * 如果只有一个数据源，可以不设置DataSourceName
  */
-@DataSourceName("jdbc/j2mvcexample")
+@DataSourceName("jdbc/j2mvc_example")
 @Table("products")
 @PrimaryKey(autoIncrement=false)
 public class Product {

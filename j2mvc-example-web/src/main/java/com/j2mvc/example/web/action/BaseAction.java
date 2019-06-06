@@ -1,11 +1,13 @@
 package com.j2mvc.example.web.action;
 
 import java.io.IOException;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletResponse;
 
 import com.j2mvc.example.web.Cache;
+import com.j2mvc.example.web.JsonResponse;
 import com.j2mvc.example.web.entity.User;
 import com.j2mvc.example.web.service.CartService;
 import com.j2mvc.example.web.service.ProductService;
@@ -16,7 +18,6 @@ import com.j2mvc.framework.i18n.I18n;
 import com.j2mvc.util.CookieUtil;
 import com.j2mvc.util.IdentifyCode;
 import com.j2mvc.util.StringUtils;
-import com.j2mvc.util.Success;
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
 
@@ -56,6 +57,7 @@ public class BaseAction extends Action{
 			return null;
 		}else if(!serverName.equals("www."+DOMAIN)){
 		}
+		jspUtil = new JspUtil(request,response);
 		return null;
 	}
 
@@ -91,9 +93,9 @@ public class BaseAction extends Action{
 			session.setAttribute(userParamName, user);	
 			session.setAttribute(tokenParamName, user.getToken());	
 	 		response.addCookie(CookieUtil.addCookie(tokenParamName,user.getToken(),  null,"",""));
-			printJson(new Success("登陆成功."));
+			success("登陆成功.",null);
 		}else{
-			printJson(new Error("用户名或密码不正确."));
+			error("用户名或密码不正确.");
 		}
 	}
 
@@ -119,13 +121,13 @@ public class BaseAction extends Action{
 	@ActionUri(uri = "/identify-code",description="验证码是否正确")
 	public boolean identifyCode(String code) {
 		if (StringUtils.isEmpty(code)) {
-			printJson(new Error("未输入验证码"));
+			error("未输入验证码");
 			return false;
 		} else if (Cache.identifyCode.equalsIgnoreCase(code)) {
-			printJson(new Success("验证码正确"));
+			success("验证码正确",null);
 			return true;
 		} else{
-			printJson(new Error("验证码错误"));
+			error("验证码错误");
 			return false;
 		}
 	}
@@ -146,5 +148,30 @@ public class BaseAction extends Action{
 		String code = ic.CreateIdentifyCode();
 		Cache.identifyCode = code;
 		ic.CreateImageOnPage(code, response);
+	}
+
+
+	/**
+	 * 错误响应结果
+	 * @param msg
+	 */
+	protected void error(String msg){
+		JsonResponse jsonResponse = new JsonResponse();
+		jsonResponse.setCode(JsonResponse.ERROR);
+		jsonResponse.setMessage(!StringUtils.isEmpty(msg)?msg:JsonResponse.MESSAGE_FAIL);
+		printJson(jsonResponse);
+	}
+	/**
+	 * 成功响应结果
+	 * @param msg
+	 */
+	protected void success(String msg,Map<String,?> result){
+		JsonResponse jsonResponse = new JsonResponse();
+		jsonResponse.setCode(JsonResponse.SUCCESS);
+		jsonResponse.setMessage(!StringUtils.isEmpty(msg)?msg:JsonResponse.MESSAGE_OK);
+		if(result!=null){
+			jsonResponse.setResult(result);
+		}
+		printJson(jsonResponse);;
 	}
 }

@@ -70,8 +70,8 @@ public class ProductService {
 	 * @return Integer
 	 */
 	public Integer total(String keyword){
-		String sql = "SELECT COUNT(*) FROM products WHERE title like";
-		return dao.number(sql,new String[]{keyword});
+		String sql = "SELECT COUNT(*) FROM products WHERE title like ?";
+		return dao.number(sql,new String[]{"%"+keyword+"%"});
 	}
 	
 	/**

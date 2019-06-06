@@ -1,8 +1,6 @@
 package com.j2mvc.example.web.interceptor;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

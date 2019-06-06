@@ -12,7 +12,7 @@ import com.j2mvc.util.mapping.Column;
  * @author yangshuo
  * 如果只有一个数据源，可以不设置DataSourceName
  */
-@DataSourceName("jdbc/j2mvcexample")
+@DataSourceName("jdbc/j2mvc_example")
 @Table("users")
 @PrimaryKey(autoIncrement=false)
 public class User {

@@ -3,7 +3,7 @@
   <display-name>minmeng-web</display-name>
 
 	<listener>
-		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
+		<listener-class>com.j2mvc.framework.FixworkListener</listener-class>
 	</listener>
 	<context-param>
 		<description>配置文件</description>
@@ -13,18 +13,18 @@
 	<context-param>
 		<description>输入SQL日志</description>
 		<param-name>sqlLog</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	<context-param>
 		<description>输入uriLog日志</description>
 		<param-name>uriLog</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	
 	<filter>
 		<display-name>DispatcherFilter</display-name>
 		<filter-name>DispatcherFilter</filter-name>
-		<filter-class>org.fixwork.framework.dispatcher.DispatcherFilter</filter-class>
+		<filter-class>com.j2mvc.framework.dispatcher.DispatcherFilter</filter-class>
 		<init-param>
 			<description>拦截的URI后缀</description>
 			<param-name>subfixes</param-name>

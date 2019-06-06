@@ -1,12 +1,13 @@
 package com.j2mvc.example.web.action;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.j2mvc.example.web.entity.Product;
 import com.j2mvc.framework.action.RequestUri;
 import com.j2mvc.util.Pagination;
 import com.j2mvc.util.StringUtils;
-import com.j2mvc.util.Success;
 import com.j2mvc.util.mapping.ActionPath;
 import com.j2mvc.util.mapping.ActionUri;
 /**
@@ -17,11 +18,11 @@ import com.j2mvc.util.mapping.ActionUri;
 @ActionPath(path="/product/",dir="/WEB-INF/jsp/")
 public class ProductAction extends BaseAction{
 	/**
-	 * 商口列表
+	 * 商品列表
 	 * @return String
 	 */
 	@ActionUri(uri="items([/])?")
-	public String index(Integer page,String keyword){
+	public String items(Integer page,String keyword){
 		page = page!=null && page > 0?page:1;
 		keyword = keyword!=null ?keyword:"";
 		
@@ -46,15 +47,48 @@ public class ProductAction extends BaseAction{
 		return jspUtil.jsp("product/items.jsp");
 	}
 
+
 	/**
-	 * 商口详情
+	 * 商品详情
 	 * @return String
 	 */
 	@ActionUri(uri="items/[a-z\\-\\d]+([/])?")
-	public String product(RequestUri uri){
+	public String item(RequestUri uri){
 		String id = uri.getValues()[2];
 		put("product",productService.get(id));
 		return jspUtil.jsp("product/item.jsp");
+	}
+	
+	/**
+	 * 获取商品列表
+	 */
+	@ActionUri(uri="getItems([/])?")
+	public void getItems(String keyword,Integer page){
+		page = page!=null && page > 0?page:1;
+		keyword = keyword!=null ?keyword:"";
+		// 查询出总数
+		Integer total = productService.total(keyword);
+		// 创建分页对象
+		Pagination pagination  = new Pagination(total,PAGESIZE, page);
+		// 查询分页数据
+		Integer start = pagination.getStartIndex();
+		List<Product> list = productService.query(keyword,start, PAGESIZE);
+		
+		if(list!=null && list.size() > 0) {
+			Map<String,Object> result = new HashMap<String,Object>();
+			result.put("pagination",pagination);
+			result.put("list",list);
+			success("获取到商品",result);
+		}else {
+			error("没有获取到商品");
+		}
+	}
+	/**
+	 * 获取商品详情
+	 */
+	@ActionUri(uri="getItem([/])?")
+	public void getItem(Product product){
+		printJson(product);
 	}
 
 	/**
@@ -63,9 +97,9 @@ public class ProductAction extends BaseAction{
 	@ActionUri(uri="save([/])?")
 	public void saveProduct(Product product){
 		if(productService.save(product)!=null){
-			printJson(new Success("添加购物车成功！"));
+			success("添加购物车成功！",null);
 		}else{
-			printJson(new Error("添加购物车失败！"));
+			error("添加购物车失败！");
 		}
 	}
 	/**
@@ -74,12 +108,12 @@ public class ProductAction extends BaseAction{
 	@ActionUri(uri="del([/])?")
 	public void delProduct(String ids){
 		if(ids == null){
-			printJson(new Error("没有选择条目！"));
+			error("没有选择条目！");
 		}
 		if(productService.delete(ids.split(","))>0){
-			printJson(new Success("删除商品成功！"));
+			success("删除商品成功！",null);
 		}else{
-			printJson(new Error("删除商品失败！"));
+			error("删除商品失败！");
 		}
 	}
 }
