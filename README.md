@@ -128,7 +128,7 @@
 	</build>
 
 2、数据库｜表
-<code>
+<precode>
 create database j2mvc_example;
 
 grant all privileges on j2mvc_example.* to exmaple@127.0.0.1 identified by 'exmaplepassword' WITH GRANT OPTION;
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS carts(
   	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-	</code>
+	</precode>
 3、网站配置
 /WEB-INF/web.xml
 
