@@ -326,6 +326,4 @@ mvn clean install
 </pre>
 
 10、注意
-若打包后的action类，无法获取到参数，
-
-
+若打包后的action类，无法获取到参数，先clean工程，再将target目录下classes目录上传服务器，覆盖服务器classes目录。
