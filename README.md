@@ -92,12 +92,12 @@ File => new => project =>  Maven => Maven Project
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-util</artifactId>
-			<version>2.10.1</version>
+			<version>2.0.10</version>
 		</dependency>
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-framework-web</artifactId>
-			<version>2.10.1</version>
+			<version>2.0.10</version>
 		</dependency>
 	</dependencies>
 
@@ -183,7 +183,7 @@ CREATE TABLE IF NOT EXISTS carts(
 /WEB-INF/web.xml
 
 	<listener>
-		<listener-class>org.fixwork.framework.FixworkListener</listener-class>
+		<listener-class>com.j2mvc.framework.FixworkListener</listener-class>
 	</listener>
 	<context-param>
 		<description>配置文件</description>
@@ -193,18 +193,28 @@ CREATE TABLE IF NOT EXISTS carts(
 	<context-param>
 		<description>输入SQL日志</description>
 		<param-name>sqlLog</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	<context-param>
 		<description>输入uriLog日志</description>
 		<param-name>uriLog</param-name>
-		<param-value>false</param-value>
+		<param-value>true</param-value>
 	</context-param>
 	
+	<servlet>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<servlet-class>com.j2mvc.framework.dispatcher.DispatcherServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DispatcherServlet</servlet-name>
+		<url-pattern>*.view</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 
 	<filter>
-		<display-name>DispatcherFilter</display-name>
+		<display-name>DispatcherFilter 实现无后缀url访问</display-name>
 		<filter-name>DispatcherFilter</filter-name>
-		<filter-class>org.fixwork.framework.dispatcher.DispatcherFilter</filter-class>
+		<filter-class>com.j2mvc.framework.dispatcher.DispatcherFilter</filter-class>
 		<init-param>
 			<description>拦截的URI后缀</description>
 			<param-name>subfixes</param-name>
@@ -214,16 +224,8 @@ CREATE TABLE IF NOT EXISTS carts(
 	<filter-mapping>
 		<filter-name>DispatcherFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping> 
-	
-	<error-page>
-		<error-code>404</error-code>
-		<location>/404.jsp</location>
-	</error-page>
-	<error-page>
-		<error-code>500</error-code>
-		<location>/500.jsp</location>
-	</error-page>
+	</filter-mapping>  
+	-->
 	
 /WEB-INF/works.xml
 
