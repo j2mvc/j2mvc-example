@@ -311,6 +311,27 @@ public class BaseAction extends Action{
 }
 </pre>
 
+JSON请求示例
+<pre>
+{
+	"id":"JSON134851",
+	"title":"JSON提交的标题",
+	"price":65.1,
+	"stock":100
+}
+</pre>
+
+XML请求示例
+<!DOCTYPE root [  
+  <!ELEMENT root ANY> 
+  <!ATTLIST Product SSN ID #REQUIRED>]>      
+<root>  
+  <Product SSN='id'>XMLID12354</Product>
+  <Product SSN='title'>XML提交的标题</Product>
+  <Product SSN='price'>55</Product> 
+  <Product SSN='stock'>32</Product>
+</root>  
+
 7、jsp
 <pre>
 在/WEB-INF/jsp/或自己定义的其它目录下编写jsp文件。

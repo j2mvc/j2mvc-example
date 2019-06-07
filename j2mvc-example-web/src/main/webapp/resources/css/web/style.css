@@ -8,7 +8,7 @@ iframe,body,table,a,li,dd {
 }
 
 body {
-	background:#f5f7f5
+	background:#f3f3f3
 }
 
 a {
@@ -24,7 +24,34 @@ h1{
 	font-weight:normal
 }
 button{
-	border:1px solod #dedede
+    background: -o-linear-gradient(to bottom,#FF9933,#FF6633);
+    background: -moz-linear-gradient(to bottom,#FF9933,#FF6633);
+    background: -webkit-linear-gradient(to bottom,#FF9933,#FF6633);
+    background: linear-gradient(to bottom,#FF9933,#FF6633);
+    /** -ms-linear-gradient(to right,#FF7E83, #FF2E5B) */
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding:0 10px;
+    color: #ffffff;
+    border:0 ;
+    line-height:27px;
+    height:27px;
+    cursor:pointer;
+    font-size:12px;
+}
+button:hover{
+    background: #FF0000;
+}
+button.blue{
+    background: -o-linear-gradient(to bottom,#3399CC,#336699);
+    background: -moz-linear-gradient(to bottom,#3399CC,#336699);
+    background: -webkit-linear-gradient(to bottom,#3399CC,#336699);
+    background: linear-gradient(to bottom,#3399CC,#336699);
+    color: #ffffff;
+}
+button.blue:hover{
+    background: #FF0000
 }
 .logo{
 	background:url(../../logo.png) left center no-repeat;
@@ -39,20 +66,106 @@ button{
 #app {
 	width: 800px;
 	margin:0 auto;
+}
+#page{
 	padding:10px;
+	margin-top:20px;
 	background:#ffffff;
-	border: #f3f3f3 1px solid;
+    border:1px solid #eee;
+    border-radius:10px;
+    box-shadow:0px 0px  10px 10px #eee;
 }
-.toolbar{
-	margin:10px;
-}
-.list-item{
-	display:flex;
-	border-bottom:1px solid #f0f0f0;
-	padding:10px;
+.clear{
+	clear:both;
 }
 
 .error{
 	text-align:center;
 	line-height:100px;
+}
+.form-title{
+}
+.form-inputs{
+	background:#f3f3f3;
+	padding:10px;
+	clear:both;
+	overflow:hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.form-inputs div{float:left;margin:10px 10px 0 0;}
+.form-inputs input{border:1px solid #ddd;padding:5px;}
+.form-inputs input.shortinput{width:50px}
+.form-inputs input.normalinput{width:70px}
+.form-inputs input:focus{border:1px solid #FF9933;background:#FFFFCC}
+
+.list-item{
+	display:block;
+	border-bottom:1px solid #f0f0f0;
+	padding:10px;
+}
+.list-item-title{
+	font-weight:bold;
+	font-size:14px;
+	clear:both;
+}
+.list-item-toolbar{
+	font-size:12px;
+}
+.small{font-size:9px}
+.big{font-size:16px}
+.red{color:#FF0000}
+.yellow{color:FF9900}
+.bold{font-weight:bold}
+.blue{color:#6699FF}
+
+#dialog {
+	position: fixed;
+	background-color: rgba(50, 50, 50, 0.1);
+	top: 0;
+	lert: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog-wrapper {
+	position: relative;
+	margin: auto;
+	overflow: hidden;
+	z-index: 998;
+	background: #ffffff;
+	border: 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	display: table-cell;
+	vertical-align: middle;
+	border: 1px solid #aaa;
+	-webkit-box-shadow: 0px 0 5px 5px #aaa;
+	-moz-box-shadow: 0px 0 5px 5px #aaa;
+	box-shadow: 0px 0 5px 5px #aaa;
+}
+.dialog-title{
+	line-height:30px;
+	height:30px;
+	background:#eee;
+	text-align:center;
+	font-weight:bold;
+}
+.dialog-footer{
+	display:flex;
+	bottom:0;
+	background:#eee;
+	line-height:30px;
+	height:30px;
+}
+.dialog-footer .dialog-button{
+	padding:0 20px 0 20px;
 }

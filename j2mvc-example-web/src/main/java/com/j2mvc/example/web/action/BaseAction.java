@@ -2,7 +2,7 @@ package com.j2mvc.example.web.action;
 
 import java.io.IOException;
 import java.util.Map;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 import javax.servlet.http.HttpServletResponse;
 

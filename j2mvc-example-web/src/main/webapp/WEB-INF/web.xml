@@ -3,7 +3,7 @@
   <display-name>minmeng-web</display-name>
 
 	<listener>
-		<listener-class>com.j2mvc.framework.FixworkListener</listener-class>
+		<listener-class>com.j2mvc.framework.J2mvcListener</listener-class>
 	</listener>
 	<context-param>
 		<description>配置文件</description>
@@ -18,6 +18,11 @@
 	<context-param>
 		<description>输入uriLog日志</description>
 		<param-name>uriLog</param-name>
+		<param-value>true</param-value>
+	</context-param>
+	<context-param>
+		<description>字符编码</description>
+		<param-name>UTF-8</param-name>
 		<param-value>true</param-value>
 	</context-param>
 	

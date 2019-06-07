@@ -71,7 +71,7 @@ public class UserInterceptor extends MeasureInterceptor{
 		}
 		String uri = request.getRequestURI();
 		if(auth(uri) && user == null){
-			log.debug("当前Uri无权限访问=>"+uri);
+			log.info("当前Uri无权限访问=>"+uri);
 			// 用户未登录
 			return false;
 		}else{

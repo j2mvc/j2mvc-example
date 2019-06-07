@@ -5,12 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.j2mvc.example.web.entity.Product;
-import com.j2mvc.framework.action.Action;
+import com.j2mvc.framework.ContentType;
+import com.j2mvc.framework.RequestMethod;
 import com.j2mvc.framework.action.RequestUri;
-import com.j2mvc.util.Pagination;
-import com.j2mvc.util.StringUtils;
 import com.j2mvc.framework.mapping.ActionPath;
 import com.j2mvc.framework.mapping.ActionUri;
+import com.j2mvc.util.Pagination;
+import com.j2mvc.util.StringUtils;
 /**
  * 网址：http://www.j2mvc.com
  * @author 杨朔
@@ -63,7 +64,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品列表
 	 */
-	@ActionUri(uri="getItems",method=Action.RequestMethod.GET,enctype=Action.Enctype.xWwwFormUrlencoded)
+	@ActionUri(uri="getItems",requestMethod=RequestMethod.GET,contentType=ContentType.XWwwFormUrlencoded)
 	public void getItems(String keyword,Integer page){
 		page = page!=null && page > 0?page:1;
 		keyword = keyword!=null ?keyword:"";
@@ -95,18 +96,35 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 保存商品
 	 */
-	@ActionUri(uri="save",method=Action.RequestMethod.POST,enctype=Action.Enctype.JSON)
+	@ActionUri(uri="save",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
 	public void saveProduct(Product product){
+		log.info("requestBody:"+requestBody);
+		if(StringUtils.isEmpty(product.getId())) {
+			error("未填写商品编号！");
+			return;
+		}
+		if(StringUtils.isEmpty(product.getTitle())) {
+			error("未填写商品标题！");
+			return;
+		}
+		if(product.getPrice() == null) {
+			error("未填写商品价格！");
+			return;
+		}
+		if(product.getStock() == null) {
+			error("未填写商品库存！");
+			return;
+		}
 		if(productService.save(product)!=null){
-			success("添加购物车成功！",null);
+			success("添加商品成功！",null);
 		}else{
-			error("添加购物车失败！");
+			error("添加商品失败！");
 		}
 	}
 	/**
 	 * 删除商品
 	 */
-	@ActionUri(uri="del",method=Action.RequestMethod.POST,enctype=Action.Enctype.FormData)
+	@ActionUri(uri="del",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
 	public void delProduct(String ids){
 		if(ids == null){
 			error("没有选择条目！");

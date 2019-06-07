@@ -6,7 +6,7 @@ flush privileges;
 
 use j2mvc_example;
  
--- source D:/works/gitrepos/j2mvc-example/j2mvc-example-web/docs\mysql.sql
+-- source D:/works/gitrepos/j2mvc-example/j2mvc-example-web/docs/mysql.sql
 -- 用户
 DROP TABLE IF EXISTS users;
 CREATE TABLE IF NOT EXISTS users(
@@ -20,8 +20,8 @@ CREATE TABLE IF NOT EXISTS users(
 DROP TABLE IF EXISTS products;
 CREATE TABLE IF NOT EXISTS products(
 	id					varchar(32)		NOT NULL,
-	title				varchar(255)		NOT NULL COMMENT '商品标题',			
-	detail				varchar(255)	NOT NULL COMMENT '商品详情',				
+	title				varchar(255)	NOT NULL COMMENT '商品标题',			
+	detail				varchar(255)			 COMMENT '商品详情',				
 	price				double(11,2)	NOT NULL COMMENT '价格',		
 	stock				int(11)			NOT NULL COMMENT '库存',
   	PRIMARY KEY (id)
