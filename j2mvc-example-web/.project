@@ -3,7 +3,6 @@
 	<name>j2mvc-example-web</name>
 	<comment></comment>
 	<projects>
-		<project>j2mvc-framework-web</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

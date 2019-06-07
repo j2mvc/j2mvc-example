@@ -92,12 +92,12 @@ File => new => project =>  Maven => Maven Project
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-util</artifactId>
-			<version>2.0.1</version>
+			<version>2.10.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-framework-web</artifactId>
-			<version>2.0.1</version>
+			<version>2.10.1</version>
 		</dependency>
 	</dependencies>
 
