@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import com.j2mvc.example.web.entity.Product;
+import com.j2mvc.framework.action.Action;
 import com.j2mvc.framework.action.RequestUri;
 import com.j2mvc.util.Pagination;
 import com.j2mvc.util.StringUtils;
-import com.j2mvc.util.mapping.ActionPath;
-import com.j2mvc.util.mapping.ActionUri;
+import com.j2mvc.framework.mapping.ActionPath;
+import com.j2mvc.framework.mapping.ActionUri;
 /**
  * 网址：http://www.j2mvc.com
  * @author 杨朔
@@ -62,7 +63,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品列表
 	 */
-	@ActionUri(uri="getItems([/])?")
+	@ActionUri(uri="getItems",method=Action.RequestMethod.GET,enctype=Action.Enctype.xWwwFormUrlencoded)
 	public void getItems(String keyword,Integer page){
 		page = page!=null && page > 0?page:1;
 		keyword = keyword!=null ?keyword:"";
@@ -86,7 +87,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品详情
 	 */
-	@ActionUri(uri="getItem([/])?")
+	@ActionUri(uri="getItem")
 	public void getItem(Product product){
 		printJson(product);
 	}
@@ -94,7 +95,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 保存商品
 	 */
-	@ActionUri(uri="save([/])?")
+	@ActionUri(uri="save",method=Action.RequestMethod.POST,enctype=Action.Enctype.JSON)
 	public void saveProduct(Product product){
 		if(productService.save(product)!=null){
 			success("添加购物车成功！",null);
@@ -105,7 +106,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 删除商品
 	 */
-	@ActionUri(uri="del([/])?")
+	@ActionUri(uri="del",method=Action.RequestMethod.POST,enctype=Action.Enctype.FormData)
 	public void delProduct(String ids){
 		if(ids == null){
 			error("没有选择条目！");

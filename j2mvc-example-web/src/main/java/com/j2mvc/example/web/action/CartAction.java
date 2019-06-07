@@ -6,8 +6,8 @@ import com.j2mvc.example.web.entity.Cart;
 import com.j2mvc.example.web.entity.Product;
 import com.j2mvc.util.Pagination;
 import com.j2mvc.util.Utils;
-import com.j2mvc.util.mapping.ActionPath;
-import com.j2mvc.util.mapping.ActionUri;
+import com.j2mvc.framework.mapping.ActionPath;
+import com.j2mvc.framework.mapping.ActionUri;
 /**
  * 网址：http://www.j2mvc.com
  * @author 杨朔

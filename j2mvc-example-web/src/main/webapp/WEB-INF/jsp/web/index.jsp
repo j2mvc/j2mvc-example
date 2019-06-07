@@ -16,40 +16,14 @@
 <meta name="keywords" content="${keywords }">
 <meta name="description" content="${description }">
 <title>${title }</title>
-<link rel="icon" href="${path }/${RESOURCE_PREFIX}/favicon_16X16.ico" type="image/x-icon"/> 
-<script src="${path }/${RESOURCE_PREFIX}/js/vue.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<style>
-#app {
-	width: 800px;
-	margin:0 auto;
-	padding:10px;
-	border: #f3f3f3 1px solid;
-}
-.toolbar{
-	margin:10px;
-}
-.list-item{
-	display:flex;
-	border-bottom:1px solid #f0f0f0;
-	padding:10px;
-}
-.list-item{
-	display:flex;
-	border-bottom:1px solid #f0f0f0;
-	padding:10px;
-}
-
-.error{
-	text-align:center;
-	line-height:100px;
-}
-
-</style>
+<link rel="icon" href="${path }/${RESOURCE_PREFIX}/favicon.ico" type="image/x-icon"/> 
+<link rel="stylesheet" href="${path }/${RESOURCE_PREFIX}/css/web/style.css" type="text/css" charset="utf8"/>
+<script src="${path }/${RESOURCE_PREFIX}/js/vue.min.js" type="text/javascript"></script>
+<script src="${path }/${RESOURCE_PREFIX}/js/axios.min.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="app">
-	<div class="title">j2mvc web示例</div>
+	<div class="title logo">j2mvc web示例</div>
 	<div class="list">
 		<div class="list-item" v-for="(item,index) in items" :key="'item'+index">
 			<div class="list-item-title">{{item.title}}</div>
@@ -67,39 +41,45 @@
 </div>
 
 <script>
-new Vue({
-  el: '#app',
-  data: {
-	  
-	  error:'',
-	  items:[],
-	  page:1,
-	  keyword:''
-  },
-  mounted () {
-	  this.getDdata();
-  },
-  methods: {
-	  getDdata:function(){
-		  var _this = this;
-		    axios.get('${path}/product/getItems',{
-		    	  params:{
-		    		  keyword:this.keyword,
-		    		  page:this.page
-		    	  }
-		      }).then(function (response) {
-		    	  if(response.data.code == 1){
-		    		  _this.items = response.data.result.list;
-		    	  }else{
-		    		  _this.error = response.data.result.error.message;
-		    	  }
-		      }).catch(function (error) { // 请求失败处理
-		        console.log(error);
-		      });
+window.onload = function(){
+	
+	var vm = new Vue({
+	  el: '#app',
+	  data: {
+		  error:'',
+		  items:[],
+		  page:1,
+		  keyword:''
+	  },
+	  mounted () {
+		  this.getDdata();
+	  },
+	  watch:{
+		  keyword(newvalue,oldvalue){
+			  console.log('keyword : ' +newvalue+'变为'+oldvalue);
+		  }
+	  },
+	  methods: {
+		  getDdata:function(){
+			  var _this = this;
+			    axios.get('${path}/product/getItems.view',{
+			    	  params:{
+			    		  keyword:this.keyword,
+			    		  page:this.page
+			    	  }
+			      }).then(function (response) {
+			    	  if(response.data.code == 1){
+			    		  _this.items = response.data.result.list;
+			    	  }else{
+			    		  _this.error = response.data.result.error.message;
+			    	  }
+			      }).catch(function (error) { // 请求失败处理
+			        console.log(error);
+			      });
+		  }
 	  }
-  }
-  
-})
+	});
+}
 </script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 package com.j2mvc.example.app.entity;
 
-import com.j2mvc.util.mapping.Column;
-import com.j2mvc.util.mapping.DataSourceName;
-import com.j2mvc.util.mapping.PrimaryKey;
-import com.j2mvc.util.mapping.Table;
+import com.j2mvc.framework.mapping.Column;
+import com.j2mvc.framework.mapping.DataSourceName;
+import com.j2mvc.framework.mapping.PrimaryKey;
+import com.j2mvc.framework.mapping.Table;
 
 /**
  * 商品实体类

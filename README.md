@@ -255,11 +255,11 @@ CREATE TABLE IF NOT EXISTS carts(
 
 4、实体模型
 <pre>
-import com.j2mvc.util.mapping.DataSourceName;
-import com.j2mvc.util.mapping.NotJSONField;
-import com.j2mvc.util.mapping.PrimaryKey;
-import com.j2mvc.util.mapping.Table;
-import com.j2mvc.util.mapping.Column;
+import com.j2mvc.framework.mapping.DataSourceName;
+import com.j2mvc.framework.mapping.NotJSONField;
+import com.j2mvc.framework.mapping.PrimaryKey;
+import com.j2mvc.framework.mapping.Table;
+import com.j2mvc.framework.mapping.Column;
 /**
  * 用户实体类
  * @author yangshuo
@@ -296,8 +296,8 @@ public class CartService {
 
 6、访问逻辑
 <pre>
-import com.j2mvc.util.mapping.ActionPath;
-import com.j2mvc.util.mapping.ActionUri;
+import com.j2mvc.framework.mapping.ActionPath;
+import com.j2mvc.framework.mapping.ActionUri;
 @ActionPath(path="/",dir="/WEB-INF/jsp/")
 public class BaseAction extends Action{
 

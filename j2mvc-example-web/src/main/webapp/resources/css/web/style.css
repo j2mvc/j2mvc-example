@@ -7,6 +7,10 @@ iframe,body,table,a,li,dd {
 	font-family: 宋体, 微软雅黑, Arail;
 }
 
+body {
+	background:#f5f7f5
+}
+
 a {
 	text-decoration: none;
 	color: #484848
@@ -15,7 +19,40 @@ a {
 a:hover {
 	color: #2386e2
 }
+h1{
+	font-size:16px;
+	font-weight:normal
+}
+button{
+	border:1px solod #dedede
+}
+.logo{
+	background:url(../../logo.png) left center no-repeat;
+	background-size:contain;
+	line-heght:50px;
+	height:50px;
+}
+.title{
+	font-size:18px;
+	font-weight:bold;
+}
+#app {
+	width: 800px;
+	margin:0 auto;
+	padding:10px;
+	background:#ffffff;
+	border: #f3f3f3 1px solid;
+}
+.toolbar{
+	margin:10px;
+}
+.list-item{
+	display:flex;
+	border-bottom:1px solid #f0f0f0;
+	padding:10px;
+}
 
-body {
-	background: #f5f6f5
+.error{
+	text-align:center;
+	line-height:100px;
 }
