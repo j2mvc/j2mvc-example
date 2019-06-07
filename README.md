@@ -92,12 +92,12 @@ File => new => project =>  Maven => Maven Project
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-util</artifactId>
-			<version>2.0.10</version>
+			<version>2.1.01</version>
 		</dependency>
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-framework-web</artifactId>
-			<version>2.0.10</version>
+			<version>2.1.01</version>
 		</dependency>
 	</dependencies>
 
@@ -109,8 +109,8 @@ File => new => project =>  Maven => Maven Project
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.5.1</version>
 					<configuration>
-						<source>1.7</source>
-						<target>1.7</target>
+						<source>1.8</source>
+						<target>1.8</target>
 					</configuration>
 				</plugin>
 				<plugin>
