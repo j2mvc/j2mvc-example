@@ -328,10 +328,10 @@ XML请求示例
   &lt;!ATTLIST Product SSN ID #REQUIRED&gt;]&gt;      
 
 &lt;root&gt;<br>
-  &lt;Product SSN='id't&gt;XMLID12354&lt;/Product&gt;<br>
-  &lt;Product SSN='title't&gt;XML提交的标题 &lt;/Product&gt;<br>
-  &lt;Product SSN='price't&gt;55 &lt;/Product&gt; <br>
-  &lt;Product SSN='stock't&gt;32 &lt;/Product&gt;<br>
+  &lt;Product SSN='id'&gt;XMLID12354&lt;/Product&gt;<br>
+  &lt;Product SSN='title'&gt;XML提交的标题 &lt;/Product&gt;<br>
+  &lt;Product SSN='price'&gt;55 &lt;/Product&gt; <br>
+  &lt;Product SSN='stock'&gt;32 &lt;/Product&gt;<br>
 &lt;/root&gt;<br>
 
 7、jsp
