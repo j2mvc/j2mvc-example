@@ -326,13 +326,13 @@ XML请求示例
 <!DOCTYPE root [  
   <!ELEMENT root ANY> 
   <!ATTLIST Product SSN ID #REQUIRED>]>      
+</pre>
 <root>  
   <Product SSN='id'>XMLID12354</Product>
   <Product SSN='title'>XML提交的标题</Product>
   <Product SSN='price'>55</Product> 
   <Product SSN='stock'>32</Product>
 </root>  
-</pre>
 
 7、jsp
 <pre>
