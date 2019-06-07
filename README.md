@@ -212,7 +212,8 @@ CREATE TABLE IF NOT EXISTS carts(
 	
 	<!-- 
 	<filter>
-		<display-name>DispatcherFilter 实现无后缀url访问</display-name>
+		<description>DispatcherFilter 实现无后缀url访问</description>
+		<display-name>DispatcherFilter</display-name>
 		<filter-name>DispatcherFilter</filter-name>
 		<filter-class>com.j2mvc.framework.dispatcher.DispatcherFilter</filter-class>
 		<init-param>
@@ -224,8 +225,7 @@ CREATE TABLE IF NOT EXISTS carts(
 	<filter-mapping>
 		<filter-name>DispatcherFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>  
-	-->
+	</filter-mapping>  --> 
 	
 /WEB-INF/works.xml
 
