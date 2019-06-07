@@ -322,6 +322,7 @@ JSON请求示例
 </pre>
 
 XML请求示例
+<pre>
 <!DOCTYPE root [  
   <!ELEMENT root ANY> 
   <!ATTLIST Product SSN ID #REQUIRED>]>      
@@ -331,6 +332,7 @@ XML请求示例
   <Product SSN='price'>55</Product> 
   <Product SSN='stock'>32</Product>
 </root>  
+</pre>
 
 7、jsp
 <pre>
