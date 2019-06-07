@@ -322,17 +322,18 @@ JSON请求示例
 </pre>
 
 XML请求示例
-<pre>
-<!DOCTYPE root [  
-  <!ELEMENT root ANY> 
-  <!ATTLIST Product SSN ID #REQUIRED>]>      
+
+&lt;!DOCTYPE root [  
+  &lt;!ELEMENT root ANY&gt; 
+  &lt;!ATTLIST Product SSN ID #REQUIRED&gt;]&gt;      
+
+&lt;root>  
+  &lt;Product SSN='id't&gt;XMLID12354&lt;/Product&gt;
+  &lt;Product SSN='title't&gt;XML提交的标题 &lt;/Product&gt;
+  &lt;Product SSN='price't&gt;55 &lt;/Product&gt; 
+  &lt;Product SSN='stock't&gt;32 &lt;/Product&gt;
+&lt;/root&gt; 
 </pre>
-<root>  
-  <Product SSN='id'>XMLID12354</Product>
-  <Product SSN='title'>XML提交的标题</Product>
-  <Product SSN='price'>55</Product> 
-  <Product SSN='stock'>32</Product>
-</root>  
 
 7、jsp
 <pre>
