@@ -194,7 +194,7 @@ axios.post("${path}/product/save",{
 4.如是XML格式，服务器应设置contentType为application/xml<br>
 						<pre>
 @ActionUri(uri="save",requestMethod=RequestMethod.POST,contentType=ContentType.JSON)
-public void saveProduct(Product product){
+public void saveProduct(Product product,String [] imageUrls,SomeObj [] obj,String key){
 	// 逻辑代码
 	...
 }
