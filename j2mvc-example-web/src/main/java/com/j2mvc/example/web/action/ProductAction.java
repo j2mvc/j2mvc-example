@@ -64,7 +64,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品列表
 	 */
-	@ActionUri(uri="getItems",requestMethod=RequestMethod.GET,contentType=ContentType.XWwwFormUrlencoded)
+	@ActionUri(uri="getItems([/])?",requestMethod=RequestMethod.GET,contentType=ContentType.XWwwFormUrlencoded)
 	public void getItems(String keyword,Integer page){
 		page = page!=null && page > 0?page:1;
 		keyword = keyword!=null ?keyword:"";
@@ -88,7 +88,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品详情
 	 */
-	@ActionUri(uri="getItem")
+	@ActionUri(uri="getItem([/])?")
 	public void getItem(Product product){
 		printJson(product);
 	}
@@ -96,9 +96,12 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 保存商品
 	 */
-	@ActionUri(uri="save",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
+	@ActionUri(uri="save([/])?",requestMethod=RequestMethod.POST,contentType=ContentType.JSON)
 	public void saveProduct(Product product){
-		log.info("requestBody:"+requestBody);
+		if(product == null) {
+			error("请求失败！");
+			return;
+		}
 		if(StringUtils.isEmpty(product.getId())) {
 			error("未填写商品编号！");
 			return;
@@ -124,7 +127,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 删除商品
 	 */
-	@ActionUri(uri="del",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
+	@ActionUri(uri="del([/])?",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
 	public void delProduct(String ids){
 		if(ids == null){
 			error("没有选择条目！");

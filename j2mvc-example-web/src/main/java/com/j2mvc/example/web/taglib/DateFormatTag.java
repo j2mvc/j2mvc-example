@@ -20,7 +20,7 @@ public class DateFormatTag extends SimpleTagSupport {
 	private String source = ""; 
 	/** 日期时间格式 */
 	private String format = "yyyy-MM-dd";
-	private Boolean force = false;
+	private Boolean force = false;  
 	
 	
 	public void doTag() throws JspException, IOException {

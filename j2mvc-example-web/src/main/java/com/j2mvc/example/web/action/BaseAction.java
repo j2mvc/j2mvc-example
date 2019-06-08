@@ -65,7 +65,7 @@ public class BaseAction extends Action{
 	 * 首页 
 	 * @return String
 	 */
-	@ActionUri(uri="index")
+	@ActionUri(uri="([/])?")
 	public String index(){
 		put("title",SITENAME+"首页");
 		put("keywords","J2mvc,web,示例");

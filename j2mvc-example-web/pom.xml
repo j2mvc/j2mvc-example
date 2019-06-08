@@ -140,13 +140,12 @@
 			<artifactId>j2mvc-util</artifactId>
 			<version>2.1.01</version>
 		</dependency>
-
+		<!-- https://mvnrepository.com/artifact/com.j2mvc/j2mvc-framework-web -->
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-framework-web</artifactId>
-			<version>2.1.01</version>
+			<version>2.1.03</version>
 		</dependency>
-  
 	</dependencies>
 
 	<build>

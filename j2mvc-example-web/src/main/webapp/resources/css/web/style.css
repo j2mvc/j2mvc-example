@@ -1,4 +1,4 @@
-iframe,body,table,a,li,dd {
+iframe, body, table, a, li, dd {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -8,7 +8,7 @@ iframe,body,table,a,li,dd {
 }
 
 body {
-	background:#f3f3f3
+	background: #f7f7f7
 }
 
 a {
@@ -19,106 +19,205 @@ a {
 a:hover {
 	color: #2386e2
 }
-h1{
-	font-size:16px;
-	font-weight:normal
+
+.error {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-weight: bold;
+	background: #fff;
+	color: #ff0000;
+	font-size: 14px;
+	clear: both;
+	text-align: center;
+	line-height: 30px;
 }
-button{
-    background: -o-linear-gradient(to bottom,#FF9933,#FF6633);
-    background: -moz-linear-gradient(to bottom,#FF9933,#FF6633);
-    background: -webkit-linear-gradient(to bottom,#FF9933,#FF6633);
-    background: linear-gradient(to bottom,#FF9933,#FF6633);
-    /** -ms-linear-gradient(to right,#FF7E83, #FF2E5B) */
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    padding:0 10px;
-    color: #ffffff;
-    border:0 ;
-    line-height:27px;
-    height:27px;
-    cursor:pointer;
-    font-size:12px;
+
+h1 {
+	font-size: 16px;
+	font-weight: normal
 }
-button:hover{
-    background: #FF0000;
+
+button {
+	background: -o-linear-gradient(to bottom, #FF9933, #FF6633);
+	background: -moz-linear-gradient(to bottom, #FF9933, #FF6633);
+	background: -webkit-linear-gradient(to bottom, #FF9933, #FF6633);
+	background: linear-gradient(to bottom, #FF9933, #FF6633);
+	/** -ms-linear-gradient(to right,#FF7E83, #FF2E5B) */
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 0 10px;
+	color: #ffffff;
+	border: 0;
+	line-height: 27px;
+	height: 27px;
+	cursor: pointer;
+	font-size: 12px;
 }
-button.blue{
-    background: -o-linear-gradient(to bottom,#3399CC,#336699);
-    background: -moz-linear-gradient(to bottom,#3399CC,#336699);
-    background: -webkit-linear-gradient(to bottom,#3399CC,#336699);
-    background: linear-gradient(to bottom,#3399CC,#336699);
-    color: #ffffff;
+
+button:hover {
+	background: #FF0000;
 }
-button.blue:hover{
-    background: #FF0000
+
+button.blue {
+	background: -o-linear-gradient(to bottom, #3399CC, #336699);
+	background: -moz-linear-gradient(to bottom, #3399CC, #336699);
+	background: -webkit-linear-gradient(to bottom, #3399CC, #336699);
+	background: linear-gradient(to bottom, #3399CC, #336699);
+	color: #ffffff;
 }
-.logo{
-	background:url(../../logo.png) left center no-repeat;
-	background-size:contain;
-	line-heght:50px;
-	height:50px;
+
+button.blue:hover {
+	background: #FF0000
 }
-.title{
-	font-size:18px;
-	font-weight:bold;
+
+button.gray {
+	background: -o-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: -moz-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: -webkit-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: linear-gradient(to bottom, #f7f7f7, #dedede);
+	border: 1px solid #aaa;
+	color: #333;
 }
+
+button.gray:hover {
+	background: #f7f7f7
+}
+
+.logo {
+	background: url(../logo.png) no-repeat 0 -5px;
+	background-size: 50px auto;
+	line-height: 50px;
+	height: 50px;
+	padding-left: 50px;
+}
+
+.title {
+	font-size: 25px;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.description {
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
 #app {
 	width: 800px;
-	margin:0 auto;
-}
-#page{
-	padding:10px;
-	margin-top:20px;
-	background:#ffffff;
-    border:1px solid #eee;
-    border-radius:10px;
-    box-shadow:0px 0px  10px 10px #eee;
-}
-.clear{
-	clear:both;
+	margin: 0 auto;
+	padding-bottom: 30px;
 }
 
-.error{
-	text-align:center;
-	line-height:100px;
+#page {
+	padding: 10px;
+	margin-top: 30px;
+	background: #ffffff;
+	border: 1px solid #f3f3f3;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px 15px #f3f3f3;
 }
-.form-title{
-}
-.form-inputs{
-	background:#f3f3f3;
-	padding:10px;
-	clear:both;
-	overflow:hidden;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}
-.form-inputs div{float:left;margin:10px 10px 0 0;}
-.form-inputs input{border:1px solid #ddd;padding:5px;}
-.form-inputs input.shortinput{width:50px}
-.form-inputs input.normalinput{width:70px}
-.form-inputs input:focus{border:1px solid #FF9933;background:#FFFFCC}
 
-.list-item{
-	display:block;
-	border-bottom:1px solid #f0f0f0;
-	padding:10px;
+.clear {
+	clear: both;
 }
-.list-item-title{
-	font-weight:bold;
-	font-size:14px;
-	clear:both;
+
+.error {
+	text-align: center;
+	line-height: 100px;
 }
-.list-item-toolbar{
-	font-size:12px;
+
+.form-inputs {
+	background: #f3f3f3;
+	padding: 10px;
+	clear: both;
+	overflow: hidden;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
 }
-.small{font-size:9px}
-.big{font-size:16px}
-.red{color:#FF0000}
-.yellow{color:FF9900}
-.bold{font-weight:bold}
-.blue{color:#6699FF}
+
+.form-inputs div {
+	float: left;
+	margin: 10px 10px 0 0;
+}
+
+.form-inputs .input {
+	border: 1px solid #ddd;
+	padding: 5px;
+}
+
+.form-inputs .input.shortinput {
+	width: 50px;
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	-moz-appearance: textfield;
+}
+
+.form-inputs .input.normalinput {
+	width: 70px
+}
+
+.form-inputs .input:focus {
+	border: 1px solid #FF9933;
+	background: #FFFFCC
+}
+
+.list-item {
+	display: block;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	border: 1px solid #f0f0f0;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.list-item:hover {
+	background: #f7f7f7
+}
+
+.list-item div {
+	line-height: 22px;
+	font-size: 12px
+}
+
+.list-item-title {
+	font-weight: bold;
+	font-size: 14px;
+	clear: both;
+}
+
+.list-item-toolbar {
+	font-size: 12px;
+}
+
+.small {
+	font-size: 9px
+}
+
+.big {
+	font-size: 16px
+}
+
+.red {
+	color: #FF0000
+}
+
+.yellow {
+	color: FF9900
+}
+
+.bold {
+	font-weight: bold
+}
+
+.blue {
+	color: #6699FF
+}
 
 #dialog {
 	position: fixed;
@@ -152,20 +251,145 @@ button.blue:hover{
 	-moz-box-shadow: 0px 0 5px 5px #aaa;
 	box-shadow: 0px 0 5px 5px #aaa;
 }
-.dialog-title{
-	line-height:30px;
-	height:30px;
-	background:#eee;
-	text-align:center;
-	font-weight:bold;
+
+.dialog-title {
+	line-height: 30px;
+	height: 30px;
+	background: #eee;
+	text-align: center;
+	font-weight: bold;
 }
-.dialog-footer{
-	display:flex;
-	bottom:0;
-	background:#eee;
-	line-height:30px;
-	height:30px;
+
+.dialog-footer {
+	display: flex;
+	bottom: 0;
+	background: #eee;
+	line-height: 30px;
+	height: 30px;
 }
-.dialog-footer .dialog-button{
-	padding:0 20px 0 20px;
+
+.dialog-footer .dialog-button {
+	padding: 0 20px 0 20px;
+}
+
+h1 {
+	margin: 10px;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+	background: #f0f0f0;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 0 0 0 10px;
+	line-height: 30px;
+	color: #666
+}
+
+.block-content {
+	padding: 20px;
+	font-size: 12px;
+	font-family: Arail
+}
+
+h1 {
+	font-size: 16px;
+	color: #484848
+}
+
+h2 {
+	font-size: 14px;
+	color: #999
+}
+
+pre {
+	background: #f7f7f7;
+	padding: 10px;
+	font-size: 12px;
+	font-family: Arail
+}
+/** 分页 */
+.pagination {
+	padding: 5px 0 5px 0;
+	overflow: auto;
+	line-height: 22px;
+	clear: both;
+}
+
+.pagination div {
+	font-size: 12px;
+}
+
+.pagination {
+	margin: 5px 0 5px 0;
+}
+
+.pagination div ul {
+	margin: 0 0 0 10px;
+	padding: 0;
+	list-style-type: none;
+}
+
+.pagination div ul li {
+	border: 1px solid #dedede;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: inline;
+	margin: 1px;
+	padding: 5px 2px 5px 2px;
+	cursor: pointer;
+}
+
+.pagination div ul li a {
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 14px;
+	padding: 0px 6px 0px 7px;
+	font-size: 14px;
+}
+
+.pagination div ul li.text {
+	color: #484848;
+	border: 0;
+}
+
+.pagination div ul li.text:hover {
+	border: 0;
+}
+
+.pagination div ul li.p {
+	border: 1px solid #999;
+	background: -o-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: -moz-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: -webkit-linear-gradient(to bottom, #f7f7f7, #dedede);
+	background: linear-gradient(to bottom, #f7f7f7, #dedede);
+}
+
+.pagination div ul li.p:hover {
+	background: #f7f7f7;
+}
+
+.pagination div ul li.p a {
+	color: #333;
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.pagination div ul li.current {
+	border: 0px solid #fff;
+	background: #fff;
+}
+
+.pagination div ul li.current a {
+	color: #ff6600;
+}
+
+.pagination div ul li a:hover {
+	
+}
+
+.pagination div ul li:hover {
+	
 }
