@@ -97,7 +97,7 @@ File => new => project =>  Maven => Maven Project
 		<dependency>
 			<groupId>com.j2mvc</groupId>
 			<artifactId>j2mvc-framework-web</artifactId>
-			<version>2.1.01</version>
+			<version>2.1.07</version>
 		</dependency>
 	</dependencies>
 
