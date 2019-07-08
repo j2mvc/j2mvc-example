@@ -17,11 +17,11 @@
 <meta name="keywords" content="${keywords }">
 <meta name="description" content="${description }">
 <title>${title }</title>
-<link rel="icon" href="${path }/${RESOURCE_PREFIX}/favicon.ico"
+<link rel="icon" href="${base.resourcePrefix}/favicon.ico"
 	type="image/x-icon" />
-<link rel="stylesheet"  rev="stylesheet" href="${path }/${RESOURCE_PREFIX}/css/web/style.css" type="text/css" charset="utf8" media="all"> 
-<script src="${path }/${RESOURCE_PREFIX}/js/vue.min.js" type="text/javascript"></script>
-<script src="${path }/${RESOURCE_PREFIX}/js/axios.min.js" type="text/javascript"></script>
+<link rel="stylesheet"  rev="stylesheet" href="${base.resourcePrefix}/css/web/style.css" type="text/css" charset="utf8" media="all"> 
+<script src="${base.resourcePrefix}/js/vue.min.js" type="text/javascript"></script>
+<script src="${base.resourcePrefix}/js/axios.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="app">

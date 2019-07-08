@@ -5,11 +5,12 @@ import java.util.List;
 import java.util.Map;
 
 import com.j2mvc.example.web.entity.Product;
-import com.j2mvc.framework.ContentType;
-import com.j2mvc.framework.RequestMethod;
 import com.j2mvc.framework.action.RequestUri;
 import com.j2mvc.framework.mapping.ActionPath;
 import com.j2mvc.framework.mapping.ActionUri;
+import com.j2mvc.framework.mapping.ContentType;
+import com.j2mvc.framework.mapping.RequestMethod;
+import com.j2mvc.framework.mapping.UploadMeta;
 import com.j2mvc.util.Pagination;
 import com.j2mvc.util.StringUtils;
 /**
@@ -64,7 +65,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品列表
 	 */
-	@ActionUri(uri="getItems([/])?",requestMethod=RequestMethod.GET,contentType=ContentType.XWwwFormUrlencoded)
+	@ActionUri(uri="getItems([/])?")
 	public void getItems(String keyword,Integer page){
 		page = page!=null && page > 0?page:1;
 		keyword = keyword!=null ?keyword:"";
@@ -96,7 +97,8 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 保存商品
 	 */
-	@ActionUri(uri="save([/])?",requestMethod=RequestMethod.POST,contentType=ContentType.JSON)
+	@ContentType(ContentType.JSON)
+	@RequestMethod(RequestMethod.POST)
 	public void saveProduct(Product product){
 		if(product == null) {
 			error("请求失败！");
@@ -127,7 +129,6 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 删除商品
 	 */
-	@ActionUri(uri="del([/])?",requestMethod=RequestMethod.POST,contentType=ContentType.FormData)
 	public void delProduct(String ids){
 		if(ids == null){
 			error("没有选择条目！");

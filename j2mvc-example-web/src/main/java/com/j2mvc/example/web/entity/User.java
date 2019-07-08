@@ -1,9 +1,9 @@
 package com.j2mvc.example.web.entity;
 
 import com.j2mvc.framework.mapping.DataSourceName;
-import com.j2mvc.framework.mapping.NotJSONField;
 import com.j2mvc.framework.mapping.PrimaryKey;
 import com.j2mvc.framework.mapping.Table;
+import com.j2mvc.util.json.NotJSONField;
 import com.j2mvc.framework.mapping.Column;
 
 
