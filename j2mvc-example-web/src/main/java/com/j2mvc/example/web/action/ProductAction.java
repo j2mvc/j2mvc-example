@@ -88,6 +88,8 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 获取商品详情
 	 */
+	@ContentType(ContentType.XWwwFormUrlencoded)
+	@RequestMethod(RequestMethod.GET)
 	@ActionUri(uri="getItem([/])?")
 	public void getItem(Product product){
 		printJson(product);
@@ -98,7 +100,8 @@ public class ProductAction extends BaseAction{
 	 */
 	@ContentType(ContentType.JSON)
 	@RequestMethod(RequestMethod.POST)
-	public void saveProduct(Product product){
+	@ActionUri(uri="save([/])?")
+	public void save(Product product){
 		if(product == null) {
 			error("请求失败！");
 			return;
@@ -128,6 +131,7 @@ public class ProductAction extends BaseAction{
 	/**
 	 * 删除商品
 	 */
+	@ActionUri(uri="del([/])?")
 	public void delProduct(String ids){
 		if(ids == null){
 			error("没有选择条目！");

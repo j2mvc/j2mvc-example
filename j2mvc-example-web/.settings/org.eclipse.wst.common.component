@@ -6,7 +6,7 @@
         <dependent-module archiveName="j2mvc-util-2.1.05.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2mvc-util/j2mvc-util">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-        <dependent-module archiveName="j2mvc-framework-web-2.1.15.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2mvc-framework-web/j2mvc-framework-web">
+        <dependent-module archiveName="j2mvc-framework-web-2.1.17.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2mvc-framework-web/j2mvc-framework-web">
             <dependency-type>uses</dependency-type>
         </dependent-module>
         <dependent-module archiveName="j2mvc-authorization-2.1.03.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/j2mvc-authorization/j2mvc-authorization">

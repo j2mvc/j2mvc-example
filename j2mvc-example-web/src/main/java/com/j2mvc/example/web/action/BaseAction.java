@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.util.Map;
 import org.apache.log4j.Logger;
 
-import javax.servlet.http.HttpServletResponse;
-
 import com.j2mvc.example.web.Cache;
 import com.j2mvc.example.web.JsonResponse;
 import com.j2mvc.example.web.entity.User;
@@ -32,9 +30,9 @@ public class BaseAction extends Action{
 	protected Logger log = Logger.getLogger(getClass().getCanonicalName());
 	/** 内容分页每页条数 */
 	protected final Integer PAGESIZE = Integer.parseInt(Config.props.get("base").get("pageSize"));
-	/** 站点名称  */
-	protected final String SITENAME = Config.props.get("base").get("siteName");
-	protected final String DOMAIN = Config.props.get("base").get("domain");
+	/** 站点名称，和props获取的结果一样  */
+	protected final String SITENAME = Config.attributes.get("baseSiteName");
+	protected final String DOMAIN = Config.attributes.get("baseDomain");
 
 
 	protected String userParamName = "user";

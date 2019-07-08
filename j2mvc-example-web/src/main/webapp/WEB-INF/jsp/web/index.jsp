@@ -16,17 +16,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="${keywords }">
 <meta name="description" content="${description }">
-<title>${base.siteName }</title>
-<link rel="icon" href="${base.resourcePrefix}/favicon.ico"
+<title>${baseSiteName }</title>
+<link rel="icon" href="${baseResourcePrefix}/favicon.ico"
 	type="image/x-icon" />
-<link rel="stylesheet"  rev="stylesheet" href="${base.resourcePrefix}/css/web/style.css" type="text/css" charset="utf8" media="all"> 
-<script src="${base.resourcePrefix}/js/vue.min.js" type="text/javascript"></script>
-<script src="${base.resourcePrefix}/js/axios.min.js" type="text/javascript"></script>
+<link rel="stylesheet"  rev="stylesheet" href="${baseResourcePrefix}/css/web/style.css" type="text/css" charset="utf8" media="all"> 
+<script src="${baseResourcePrefix}/js/vue.min.js" type="text/javascript"></script>
+<script src="${baseResourcePrefix}/js/axios.min.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="app">
 		<div id="page" :style="{minHeight:wrapperHeight+'px'}" ref="wrapper">
-			<div class="title logo">${base.siteName}示例</div>
+			<div class="title logo">${baseSiteName}示例</div>
 			<div class="description">
 				本示例仅作参考，展示了数据库操作，以及数据显示。<br>
 				本页面采用vue实现异获取数据和更新数据。
@@ -137,7 +137,11 @@ axios.get('${path}/product/getItems',{
 3.可以不设置requestMethod,contentType。<br>
 4.如果要设置，requestMethod设置为GET，contentType设置为application/x-www-form-urlencoded。
 							<pre>
-@ActionUri(uri="getItems",requestMethod=RequestMethod.GET,contentType=ContentType.XWwwFormUrlencoded){
+
+@ContentType(ContentType.XWwwFormUrlencoded)
+@RequestMethod(RequestMethod.GET)
+@ActionUri(uri="getItems")
+public void getItem(Product product){
 	// 逻辑代码
 	...
 }
@@ -193,8 +197,11 @@ axios.post("${path}/product/save",{
 3.如是JSON格式，服务器应设置contentType为application/json，通常Ajax的数据提交为application/json<br>
 4.如是XML格式，服务器应设置contentType为application/xml<br>
 						<pre>
-@ActionUri(uri="save",requestMethod=RequestMethod.POST,contentType=ContentType.JSON)
-public void saveProduct(Product product,String [] imageUrls,SomeObj [] obj,String key){
+
+@ContentType(ContentType.JSON)
+@RequestMethod(RequestMethod.POST)
+@ActionUri(uri="save")
+public void save(Product product,String [] imageUrls,SomeObj [] obj,String key){
 	// 逻辑代码
 	...
 }

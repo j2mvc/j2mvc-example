@@ -16,11 +16,11 @@
 <meta name="keywords" content="${keywords }">
 <meta name="description" content="${description }">
 <title>用户登录</title>
-<link rel="icon" href="${base.resourcePrefix}/favicon_16X16.ico" type="image/x-icon"/> 
-<link rel="stylesheet" href="${base.resourcePrefix}/css/web/style.css" />
+<link rel="icon" href="${baseResourcePrefix}/favicon_16X16.ico" type="image/x-icon"/> 
+<link rel="stylesheet" href="${baseResourcePrefix}/css/web/style.css" />
 </head>
 <body>
 
-<script type="text/javascript" src="${base.resourcePrefix}/js/jquery-1.11.3.min.js"></script> 
+<script type="text/javascript" src="${baseResourcePrefix}/js/jquery-1.11.3.min.js"></script> 
 </body>
 </html>
