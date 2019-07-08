@@ -10,7 +10,6 @@ import com.j2mvc.framework.mapping.ActionPath;
 import com.j2mvc.framework.mapping.ActionUri;
 import com.j2mvc.framework.mapping.ContentType;
 import com.j2mvc.framework.mapping.RequestMethod;
-import com.j2mvc.framework.mapping.UploadMeta;
 import com.j2mvc.util.Pagination;
 import com.j2mvc.util.StringUtils;
 /**

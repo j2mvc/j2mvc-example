@@ -33,6 +33,7 @@ public class BaseAction extends Action{
 	/** 内容分页每页条数 */
 	protected final Integer PAGESIZE = Integer.parseInt(Config.props.get("base").get("pageSize"));
 	/** 站点名称  */
+	protected final String SITENAME = Config.props.get("base").get("siteName");
 	protected final String DOMAIN = Config.props.get("base").get("domain");
 
 
