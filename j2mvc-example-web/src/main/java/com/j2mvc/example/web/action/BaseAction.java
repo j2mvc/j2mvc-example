@@ -14,6 +14,7 @@ import com.j2mvc.example.web.service.ProductService;
 import com.j2mvc.example.web.service.UserService;
 import com.j2mvc.example.web.util.JspUtil;
 import com.j2mvc.framework.action.Action;
+import com.j2mvc.framework.config.Config;
 import com.j2mvc.framework.i18n.I18n;
 import com.j2mvc.util.CookieUtil;
 import com.j2mvc.util.IdentifyCode;
@@ -30,12 +31,10 @@ import com.j2mvc.framework.mapping.ActionUri;
 public class BaseAction extends Action{
 	protected Logger log = Logger.getLogger(getClass().getCanonicalName());
 	/** 内容分页每页条数 */
-	protected final Integer PAGESIZE = I18n.i18n.get("PAGESIZE")!=null &&  I18n.i18n.get("PAGESIZE").matches("\\d+")?Integer.valueOf(I18n.i18n.get("PAGESIZE")):20;
+	protected final Integer PAGESIZE = Integer.parseInt(Config.props.get("base").get("pageSize"));
 	/** 站点名称  */
-	protected final String SITENAME = I18n.i18n.get("SITENAME");
+	protected final String DOMAIN = Config.props.get("base").get("domain");
 
-	/** 默认域名 */
-	protected String DOMAIN = I18n.i18n.get("DOMAIN");
 
 	protected String userParamName = "user";
 	protected String tokenParamName = "token";
@@ -49,14 +48,14 @@ public class BaseAction extends Action{
 
 	@Override
 	public String onStart() {
-		String serverName = request.getServerName();
-		if(serverName.equals(DOMAIN)){
-			// 301重定向//
-			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);   
-			response.setHeader("Location","http://www."+DOMAIN);
-			return null;
-		}else if(!serverName.equals("www."+DOMAIN)){
-		}
+//		String serverName = request.getServerName();
+//		if(serverName.equals(DOMAIN)){
+//			// 301重定向//
+//			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);   
+//			response.setHeader("Location","http://www."+DOMAIN);
+//			return null;
+//		}else if(!serverName.equals("www."+DOMAIN)){
+//		}
 		jspUtil = new JspUtil(request,response);
 		return null;
 	}
@@ -67,7 +66,6 @@ public class BaseAction extends Action{
 	 */
 	@ActionUri(uri="([/])?")
 	public String index(){
-		put("title",SITENAME+"首页");
 		put("keywords","J2mvc,web,示例");
 		put("description","这是一个J2mvcWeb示例网站");
 		return jspUtil.jsp("index.jsp");

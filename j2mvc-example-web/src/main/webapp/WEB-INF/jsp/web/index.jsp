@@ -16,7 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="keywords" content="${keywords }">
 <meta name="description" content="${description }">
-<title>${title }</title>
+<title>${base.siteName }</title>
 <link rel="icon" href="${base.resourcePrefix}/favicon.ico"
 	type="image/x-icon" />
 <link rel="stylesheet"  rev="stylesheet" href="${base.resourcePrefix}/css/web/style.css" type="text/css" charset="utf8" media="all"> 
@@ -26,7 +26,7 @@
 <body>
 	<div id="app">
 		<div id="page" :style="{minHeight:wrapperHeight+'px'}" ref="wrapper">
-			<div class="title logo">j2mvc web示例</div>
+			<div class="title logo">${base.siteName}示例</div>
 			<div class="description">
 				本示例仅作参考，展示了数据库操作，以及数据显示。<br>
 				本页面采用vue实现异获取数据和更新数据。
